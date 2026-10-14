@@ -16,8 +16,11 @@
             <ul>
                 <li><a href="./index.html">Inicio</a></li>
                 <li><a href="./pages/contacto.html">Contacto</a></li>
-                <!-- Contador de carrito visible -->
-                <li class="cart-menu">🛒 <span id="contador-carrito">0</span></li>
+                <li class="cart-menu">
+                    <a href="./pages/carrito.html" style="text-decoration: none; color: inherit;">
+                        🛒 <span id="contador-carrito">0</span>
+                    </a>
+                </li>
             </ul>
         </nav>
     </header>
@@ -28,19 +31,16 @@
             <p>Fútbol, música, cine, política, celebraciones, sarcasmo. Todo se puede decir a través de remeras. Llevá con orgullo eso que te gusta. Pedí "Tu Remera".</p>
         </section>
 
-        <!-- NUEVA SECCIÓN: Diseñá tu Remera Interactiva -->
         <section class="personalizar-seccion">
             <h2 class="titulo-productos">Diseñá tu propia remera</h2>
             <div class="contenedor-personalizador">
                 
-                <!-- Vista previa visual de la remera interactiva -->
                 <div class="vista-previa">
                     <div id="remera-virtual" class="remera-blanca">
                         <div id="estampa-texto">Tu Frase Aquí</div>
                     </div>
                 </div>
 
-                <!-- Controles para el usuario -->
                 <div class="controles">
                     <h3>Opciones de personalización</h3>
                     <form id="form-personalizar" onsubmit="event.preventDefault();">
@@ -68,7 +68,6 @@
             </div>
         </section>
 
-        <!-- Catálogo de productos tradicionales -->
         <section class="productos-seccion">
             <h2 class="titulo-productos text-secondary">Nuestros Productos Base</h2>
             <div class="contenedor-tarjetas">
@@ -105,7 +104,6 @@
         <p>&copy; 2026 Tu Remera. Todos los derechos reservados.</p>
     </footer>
 
-    <!-- Vinculamos las acciones del carrito y diseño interactivo -->
     <script src="script.js"></script>
 </body>
 </html>
