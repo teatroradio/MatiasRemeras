@@ -3,20 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Unificamos a un único archivo style.css en la raíz del proyecto -->
     <link rel="stylesheet" href="style.css">
-      <title>Tu Remera - Tienda de Remeras Personalizadas</title>
+    <title>Tu Remera - Tienda de Remeras Personalizadas</title>
 </head>
 <body>
     <header>
         <div class="div-logo">
-              <img src="./img/logo.jpg" alt="LOGO" width="300" />
+            <img src="./img/logo.jpg" alt="LOGO" width="300" />
             <a class="logo" href="./index.html">TU REMERA</a>
         </div>
         <nav class="header-nav">
             <ul>
                 <li><a href="./index.html">Inicio</a></li>
                 <li><a href="./pages/contacto.html">Contacto</a></li>
+                <!-- Contador de carrito visible -->
+                <li class="cart-menu">🛒 <span id="contador-carrito">0</span></li>
             </ul>
         </nav>
     </header>
@@ -27,8 +28,49 @@
             <p>Fútbol, música, cine, política, celebraciones, sarcasmo. Todo se puede decir a través de remeras. Llevá con orgullo eso que te gusta. Pedí "Tu Remera".</p>
         </section>
 
+        <!-- NUEVA SECCIÓN: Diseñá tu Remera Interactiva -->
+        <section class="personalizar-seccion">
+            <h2 class="titulo-productos">Diseñá tu propia remera</h2>
+            <div class="contenedor-personalizador">
+                
+                <!-- Vista previa visual de la remera interactiva -->
+                <div class="vista-previa">
+                    <div id="remera-virtual" class="remera-blanca">
+                        <div id="estampa-texto">Tu Frase Aquí</div>
+                    </div>
+                </div>
+
+                <!-- Controles para el usuario -->
+                <div class="controles">
+                    <h3>Opciones de personalización</h3>
+                    <form id="form-personalizar" onsubmit="event.preventDefault();">
+                        <label for="color-select">Color de prenda:</label>
+                        <select id="color-select">
+                            <option value="blanca">Blanco Premium</option>
+                            <option value="gris">Gris Melange</option>
+                            <option value="negra">Negro Absoluto</option>
+                        </select>
+
+                        <label for="texto-remera">Escribí tu frase o estampa:</label>
+                        <input type="text" id="texto-remera" placeholder="Ej: Sarcasmo Puro" maxlength="30">
+
+                        <label for="talle-select">Elegí tu talle:</label>
+                        <select id="talle-select">
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                        </select>
+
+                        <button type="button" id="btn-agregar-personalizada" class="btn">Agregar Diseño al Carrito</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Catálogo de productos tradicionales -->
         <section class="productos-seccion">
-            <h2 class="titulo-productos text-secondary">Nuestros Productos</h2>
+            <h2 class="titulo-productos text-secondary">Nuestros Productos Base</h2>
             <div class="contenedor-tarjetas">
                 
                 <article class="card text-dark">
@@ -36,7 +78,7 @@
                     <h3>Remeras blancas</h3>
                     <p>Remera blanca estampada</p>
                     <p class="precio">$8000</p>
-                    <button class="btn bg-secondary text-dark">Agregar al carrito</button>
+                    <button class="btn btn-carrito bg-secondary text-dark">Agregar al carrito</button>
                 </article>
 
                 <article class="card text-dark">
@@ -44,7 +86,7 @@
                     <h3>Remeras grises</h3>
                     <p>Remera gris estampada</p>
                     <p class="precio">$9500</p>
-                    <button class="btn bg-secondary text-dark">Agregar al carrito</button>
+                    <button class="btn btn-carrito bg-secondary text-dark">Agregar al carrito</button>
                 </article>
 
                 <article class="card text-dark">
@@ -52,7 +94,7 @@
                     <h3>Remeras negras</h3>
                     <p>Remera negra estampada</p>
                     <p class="precio">$11000</p>
-                    <button class="btn bg-secondary text-dark">Agregar al carrito</button>
+                    <button class="btn btn-carrito bg-secondary text-dark">Agregar al carrito</button>
                 </article>
 
             </div>
@@ -62,5 +104,8 @@
     <footer>
         <p>&copy; 2026 Tu Remera. Todos los derechos reservados.</p>
     </footer>
+
+    <!-- Vinculamos las acciones del carrito y diseño interactivo -->
+    <script src="script.js"></script>
 </body>
 </html>
